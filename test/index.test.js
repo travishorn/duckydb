@@ -1,29 +1,29 @@
 import { existsSync, unlinkSync } from "node:fs";
 import { afterAll, beforeAll, describe, expect, test } from "vitest";
-import Qwack from "../src/index.js";
+import Duckydb from "../src/index.js";
 
 describe("Opening connections", () => {
   test("Opens a database", async () => {
-    const db = new Qwack();
-    expect(db).toBeInstanceOf(Qwack);
+    const db = new Duckydb();
+    expect(db).toBeInstanceOf(Duckydb);
     await db.close();
   });
 
   test("Opens a database with a file name for a persistent database", async () => {
-    const db = new Qwack("test.duckdb");
-    expect(db).toBeInstanceOf(Qwack);
+    const db = new Duckydb("test.duckdb");
+    expect(db).toBeInstanceOf(Duckydb);
     await db.close();
     expect(existsSync("test.duckdb")).toBe(true);
     unlinkSync("test.duckdb");
   });
 
   test("Opens a database with configuration options", async () => {
-    const db = new Qwack(":memory:", {
+    const db = new Duckydb(":memory:", {
       access_mode: "READ_WRITE",
       max_memory: "512MB",
       threads: "4",
     });
-    expect(db).toBeInstanceOf(Qwack);
+    expect(db).toBeInstanceOf(Duckydb);
     await db.close();
   });
 });
@@ -32,7 +32,7 @@ describe("Executing queries", () => {
   let db;
 
   beforeAll(async () => {
-    db = new Qwack();
+    db = new Duckydb();
   });
 
   afterAll(async () => {
@@ -84,7 +84,7 @@ describe("Executing queries", () => {
 
 describe("Closing connections", () => {
   test("Does not execute queries on a closed database", async () => {
-    const db = new Qwack();
+    const db = new Duckydb();
     const sql = "SELECT 42 AS answer;";
     await db.close();
     await expect(db.query(sql)).rejects.toThrow(

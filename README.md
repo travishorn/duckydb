@@ -1,21 +1,21 @@
-# Qwack
+# DuckyDB
 
 A wrapper class for DuckDB with promise-based queries and named parameters support.
 
 ## Installation
 
 ```bash
-npm install qwack
+npm install duckydb
 ```
 
 ## Usage
 
 ```javascript
 // Import the library
-import Qwack from "qwack";
+import Duckydb from "duckydb";
 
 // Create/connect to a database
-const db = new Qwack("test.duckdb");
+const db = new Duckydb("test.duckdb");
 
 // Query the database
 const result = await db.query("SELECT * FROM users WHERE name = :name", {

@@ -1,5 +1,5 @@
 {
-  "name": "qwack",
+  "name": "duckydb",
   "version": "0.1.0",
   "description": "A wrapper class for DuckDB with promise-based queries and named parameters support.",
   "keywords": [
@@ -10,8 +10,8 @@
     "named",
     "parameters"
   ],
-  "homepage": "https://github.com/travishorn/qwack#readme",
-  "bugs": "https://github.com/travishorn/qwack/issues",
+  "homepage": "https://github.com/travishorn/duckydb#readme",
+  "bugs": "https://github.com/travishorn/duckydb/issues",
   "license": "MIT",
   "author": "Travis Horn <travis@travishorn.com> (https://travishorn.com/)",
   "files": [
@@ -20,7 +20,7 @@
   "exports": "./src/index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/travishorn/qwack.git"
+    "url": "git+https://github.com/travishorn/duckydb.git"
   },
   "scripts": {
     "test": "vitest",

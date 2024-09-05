@@ -3,9 +3,9 @@ import duckdb from "duckdb";
 /**
  * A wrapper class for DuckDB with promise-based queries and named parameters support.
  */
-export default class Qwack {
+export default class Duckydb {
   /**
-   * Creates a new Qwack instance.
+   * Creates a new Duckydb instance.
    * @param {string} [path=":memory:"] - The path to the database file or ":memory:" for in-memory database.
    * @param {Object} [config] - Configuration options for DuckDB.
    */
